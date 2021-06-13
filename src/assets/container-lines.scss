@@ -1,0 +1,64 @@
+$enable-dev-colors: false ;
+$container-big-col: 0.8;
+$container-big-col-px: calc(#{$container-width} * #{$container-big-col});
+$container-small-col-px: calc(#{$container-width} - #{$container-big-col-px});
+$container-vert-col1-width: calc((100% - #{$container-width}) / 2);
+
+@mixin vertical-lines($key, $container-width) {
+  $container-big-col: 0.8;
+  $container-big-col-px: calc(#{$container-width} * #{$container-big-col});
+  $container-small-col-px: calc(#{$container-width} - #{$container-big-col-px});
+  $container-vert-col1-width: calc((100% - #{$container-width}) / 2);
+
+  .col1 {
+    width: $container-vert-col1-width;
+    border-right: $background-line-width solid $background-line-color;
+
+    @if $enable-dev-colors {
+      background-color: rgba(0, 255, 255, 0.18);
+    }
+  }
+  .col2 {
+    width: $container-big-col-px;
+    border-right: $background-line-width solid $background-line-color;
+
+    @if $enable-dev-colors {
+      background-color: rgba(144, 219, 90, 0.18);
+    }
+  }
+  .col3 {
+    width: $container-small-col-px;
+    border-right: $background-line-width solid $background-line-color;
+
+    @if $enable-dev-colors {
+      background-color: rgba(200, 0, 255, 0.18);
+    }
+  }
+  .col4 {
+    width: $container-vert-col1-width;
+
+    @if $enable-dev-colors {
+      background-color: rgba(247, 255, 0, 0.18);
+    }
+  }
+}
+
+@media (max-width: 575.98px){
+  @include vertical-lines("sm", 450px)
+}
+
+@media (min-width: 576px){
+  @include vertical-lines("sm", 540px)
+}
+
+@media (min-width: 768px){
+  @include vertical-lines("md", 720px)
+}
+
+@media (min-width: 992px){
+  @include vertical-lines("md", 960px)
+}
+
+@media (min-width: 1200px){
+  @include vertical-lines("md", 1140px)
+}

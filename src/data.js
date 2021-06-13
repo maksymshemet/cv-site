@@ -1,22 +1,28 @@
-
 const epam = {
     name: "Epam Systems",
-    url: "#"
+    url: "https://www.epam.com/"
 }
 const isd = {
     name: "ISD",
-    url: "#"
+    url: "http://www.isd.dp.ua/en/"
 }
 const nix = {
     name: "N-iX",
-    url: "#"
+    url: "https://www.n-ix.com/"
+}
+
+export const social = {
+    email: "mailto:shemet.max92@gmail.com?subject=Greetings",
+    github: "https://github.com/maksymshemet",
+    skype: "skype:maksym.shemet?chat",
+    linkedin: "https://www.linkedin.com/in/maksym-shemet-105036a4/"
 }
 
 export const about = `
  I'm a software engineer with ${getExperianceYears()} years of commercial experience in software development.
- I have a solid knowledge of Java SE/EE, C# Core, Unity (game engine), experience in Python and 
- Javascript and a have a good understanding of OOP, development principles and flows, SCRUM methodology. 
- I worked with a diverse variety of projects reaching from web-based platforms,  REStful web services based 
+ I have a solid knowledge of Java SE/EE, C# Core, Unity (game engine),  Python experience, and a have a good
+ understanding of OOP, development principles and flows, SCRUM methodology. 
+ I worked with various projects reaching from web-based platforms,  REStful web services based 
  on microservice architecture to desktop applications and mobile games.
 `
 

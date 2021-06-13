@@ -15,6 +15,7 @@ export default {
 
 <style lang="scss">
 
+@import "src/assets/variables";
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&display=swap');
 
 
@@ -25,7 +26,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: $text-color-dark;
   overflow-y: hidden;
 
  /* Firefox */

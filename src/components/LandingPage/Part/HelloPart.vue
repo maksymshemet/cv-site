@@ -10,18 +10,18 @@
         <div class="horizontal-line"></div>
       </template>
       <template v-slot:default>
-        <div class="greetings header-padding">
-          Hello there! I'm Max,
+        <div class="greetings header-padding no-select">
+          Hello there!  <br /> I'm Max,
           <p>software engineer</p>
         </div>
       </template>
       <template v-slot:col3>
-        <div id="scroll">
+        <div id="scroll" v-on:click="scrollBottom" class="no-select">
           scroll down
         </div>
       </template>
       <template v-slot:col4>
-          <div id="landing-contact-me" class="header-padding">
+          <div id="landing-contact-me" class="header-padding no-select" v-on:click="sendEmail">
             contact me
           </div>
       </template>
@@ -31,10 +31,19 @@
 
 <script>
 import LinesContainer from "/src/components/LandingPage/LinesContainer"
+import { social } from "/src/data"
 
 export default {
   name: "HelloPart",
-  components: {LinesContainer}
+  components: {LinesContainer},
+  methods: {
+    scrollBottom() {
+      window.scrollTo(0,document.body.scrollHeight);
+    },
+    sendEmail() {
+      window.open(social.email, "_blank");
+    }
+  }
 }
 </script>
 
@@ -81,13 +90,16 @@ header {
     font-variant-ligatures: common-ligatures;
     text-align: start;
     padding-left: 50px;
-
+    br {
+      display: none;
+    }
     p {
       margin-bottom: -10px;
     }
   }
 
   #landing-contact-me {
+    cursor: pointer;
     position: absolute;
     bottom: $top-margin-content;
     margin-bottom: 40px;
@@ -99,11 +111,24 @@ header {
   }
 
   #scroll {
+    cursor: pointer;
     position: absolute;
     bottom: 0;
     height: fit-content;
     width: inherit;
     margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 767.98px){
+  #ln {
+    .greetings {
+      font-size: 5vh;
+      padding-left: 10px;
+      br {
+        display: block;
+      }
+    }
   }
 }
 </style>

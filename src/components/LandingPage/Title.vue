@@ -1,6 +1,6 @@
 <template>
   <div id="title">
-    <div>{{text}}</div>
+    <div class="no-select">{{text}}</div>
     <div class="line"/>
   </div>
 </template>

@@ -1,8 +1,8 @@
 <template>
   <b-row class="download-row">
-    <b-col align-self="end" offset="10" cols="2">
+    <b-col align-self="end" offset-md="10" md="2"  offset-sm="8" sm="4">
       <div>
-        <span>Download</span>
+        <span class="no-select">Download</span>
       </div>
     </b-col>
   </b-row>
@@ -20,6 +20,7 @@ export default {
   //display: flex;
   [class*="col-"] {
     > div {
+      cursor: pointer;
       width: inherit;
       height: 40px;
       border-radius: 15px;
@@ -29,6 +30,9 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
+      &:active {
+        background-color: #b30202;
+      }
     }
   }
 }

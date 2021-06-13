@@ -1,5 +1,5 @@
 <template>
-  <div id="root">
+  <div id="root" class="no-select">
     <slot></slot>
   </div>
 </template>
@@ -13,6 +13,7 @@ export default {
 <style scoped lang="scss">
 
 #root {
+  cursor: default;
   border-radius: 15px;
   background-color: #f4f4f4;
   width: fit-content;

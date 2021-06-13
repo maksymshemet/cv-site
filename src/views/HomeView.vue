@@ -1,5 +1,6 @@
 <template>
   <div>
+    <DevTitle />
     <HelloPart />
     <Wave id="wave" />
     <ResumePart />
@@ -36,10 +37,11 @@ import Wave from "/src/components/LandingPage/Wave/Wave";
 import HelloPart from "/src/components/LandingPage/Part/HelloPart";
 import ResumePart from "/src/components/LandingPage/Part/ResumePart";
 import FooterPart from "/src/components/LandingPage/Part/FooterPart";
+import DevTitle from "/src/components/DevTitle";
 
 export default {
   name: "HomeView",
-  components: { Wave, HelloPart, ResumePart, FooterPart }
+  components: { Wave, HelloPart, ResumePart, FooterPart, DevTitle }
 }
 </script>
 
