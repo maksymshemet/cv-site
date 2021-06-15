@@ -1,7 +1,5 @@
 <template>
-<div>
-developers version
-</div>
+  <div>developers version</div>
 </template>
 
 <script>

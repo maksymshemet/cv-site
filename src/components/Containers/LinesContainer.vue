@@ -28,7 +28,7 @@ export default {
 
 @import "src/assets/variables";
 
-$enable-dev-colors: false ;
+$enable-dev-colors: false;
 
 #container {
   height: inherit;

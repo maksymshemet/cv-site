@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 import '@/assets/styles.scss'
-
+// import '@/assets/media-queries.scss'
 
 Vue.use(VueStatic,{
   namespaced: false,

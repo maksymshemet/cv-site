@@ -9,7 +9,7 @@
 
 <script>
 
-import Title from "/src/components/LandingPage/Title"
+import Title from "/src/components/Title"
 
 export default {
   name: "TitledRow",
@@ -18,4 +18,5 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+</style>

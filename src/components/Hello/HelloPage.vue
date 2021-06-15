@@ -1,13 +1,12 @@
 <template>
   <div id="root" class="white-text">
-
     <header>
       <a href="#" class="white-text"></a>
     </header>
 
     <LinesContainer id="ln">
       <template v-slot:col1>
-        <div class="horizontal-line"></div>
+        <div class="horizontal-line disable-on-xs"></div>
       </template>
       <template v-slot:default>
         <div class="greetings header-padding no-select">
@@ -21,7 +20,7 @@
         </div>
       </template>
       <template v-slot:col4>
-          <div id="landing-contact-me" class="header-padding no-select" v-on:click="sendEmail">
+          <div id="landing-contact-me" class="header-padding no-select disable-on-xs" v-on:click="sendEmail">
             contact me
           </div>
       </template>
@@ -30,11 +29,11 @@
 </template>
 
 <script>
-import LinesContainer from "/src/components/LandingPage/LinesContainer"
+import LinesContainer from "/src/components/Containers/LinesContainer"
 import { social } from "/src/data"
 
 export default {
-  name: "HelloPart",
+  name: "HelloPage",
   components: {LinesContainer},
   methods: {
     scrollBottom() {
@@ -107,7 +106,7 @@ header {
     font-size: 12pt;
     writing-mode: vertical-rl;
     text-orientation: mixed;
-    width: fit-content;
+    width: auto;
   }
 
   #scroll {
@@ -120,7 +119,7 @@ header {
   }
 }
 
-@media (max-width: 767.98px){
+@include before-media-sm() {
   #ln {
     .greetings {
       font-size: 5vh;

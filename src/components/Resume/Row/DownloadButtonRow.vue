@@ -17,7 +17,6 @@ export default {
 <style scoped lang="scss">
 .download-row {
   margin-bottom: 75px;
-  //display: flex;
   [class*="col-"] {
     > div {
       cursor: pointer;

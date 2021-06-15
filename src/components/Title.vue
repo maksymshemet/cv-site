@@ -1,7 +1,7 @@
 <template>
   <div id="title">
     <div class="no-select">{{text}}</div>
-    <div class="line"/>
+    <div class="line disable-on-xs"/>
   </div>
 </template>
 

@@ -23,16 +23,16 @@
       </b-col>
     </b-row>
     <b-row>
-      <b-col id="project-time" md="9" sm="7">
+      <b-col id="project-time" md="9" sm="7" cols="3">
         <div class="date-line"></div>
       </b-col>
-      <b-col md="3" sm="5" class="date">{{ project.startDate }} - {{ project.endDate }}</b-col>
+      <b-col md="3" sm="5" cols="9" class="date">{{ project.startDate }} - {{ project.endDate }}</b-col>
     </b-row>
   </b-container>
 </template>
 
 <script>
-import TagContainer from "/src/components/LandingPage/Tag/TagContainer";
+import TagContainer from "/src/components/Containers/TagContainer";
 
 export default {
   name: "Project",
@@ -43,6 +43,7 @@ export default {
 
 <style scoped lang="scss">
 @import "src/assets/variables";
+@import "src/assets/media-queries";
 
 $date-color: #bebebe;
 
@@ -86,7 +87,7 @@ $date-color: #bebebe;
     list-style: disc;
   }
 }
-@media (max-width: 767.98px){
+@include before-media-md() {
   #action-list {
     margin-top: 20px;
     padding-left: 0;

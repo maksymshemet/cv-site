@@ -1,0 +1,34 @@
+@import "src/assets/media-queries";
+
+#webgl-canvas {
+  min-height: 100vh;
+  min-width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#wave {
+  position: absolute;
+  top: 0;
+  background-color: #090909;
+  width: 100%;
+  height: 100vh;
+}
+.text {
+  z-index: 500;
+  color: honeydew;
+}
+
+@include before-media-sm {
+  #webgl-canvas {
+    //display: none;
+  }
+}
+
+@include from-media-xs {
+  #webgl-canvas {
+    //display: none;
+    //max-width: 330px;
+    //overflow: hidden;
+  }
+}

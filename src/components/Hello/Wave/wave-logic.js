@@ -52,10 +52,6 @@ function canvasWidth() {
         window.innerWidth,
         window.screen.availWidth,
         document.body.clientWidth)
-    // if (window.innerWidth > window.screen.availWidth)
-    //     return window.screen.availWidth
-    // else
-    //     return window.innerWidth
 }
 
 export class Stage {
@@ -65,7 +61,6 @@ export class Stage {
     constructor(canvas) {
         this.clearColor = 0x000000
         this.canvas = canvas
-        // this._setRenderParam();
         this.cameraParam = {
             left: -1,
             right: 1,
@@ -116,9 +111,6 @@ export class Stage {
             );
         }
 
-        // const windowWidth = this.renderParam.width;
-        // const windowHeight = this.renderParam.height;
-
         this.camera.aspect = this.width / this.height;
 
         this.camera.updateProjectionMatrix();
@@ -129,16 +121,8 @@ export class Stage {
         this.renderer.render(this.scene, this.camera);
     }
 
-    // _setRenderParam() {
-    //     this.renderParam = {
-    //         width: this.width,
-    //         height: this.height
-    //     }
-    // }
-
     onResize() {
-        console.log("resize")
-        // this._setRenderParam();
+        // console.log("resize")
         this._setRender();
         this._setCamera();
     }
@@ -154,8 +138,6 @@ export class Mesh {
 
     constructor(stage) {
         this.canvas = stage.canvas
-        // this.canvasWidth = this.canvas.width;
-        // this.canvasHeight = this.canvas.height;
         this._createUniforms();
 
         this.stage = stage;

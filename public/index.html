@@ -7,12 +7,24 @@
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
 <!--    <title><%= htmlWebpackPlugin.options.title %></title>-->
     <title>Max Shemet</title>
+    <link rel="stylesheet" type="text/css" href="spinner.css" />
+<!--      <link rel="preconnect" href="https://fonts.gstatic.com">-->
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
   </head>
   <body>
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
-    <div id="app"></div>
+    <div id="app">
+      <div id="wrapper" v-if="!isLoaded">
+        <div class="loader" data-text="Loading">
+          <span class="loader-circle"></span>
+          <span class="loader-circle"></span>
+          <span class="loader-circle"></span>
+          <span class="loader-circle"></span>
+        </div>
+      </div>
+    </div>
     <!-- built files will be auto injected -->
   </body>
 

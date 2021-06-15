@@ -1,56 +1,27 @@
 <template>
   <div>
     <DevTitle />
-    <HelloPart />
-    <Wave id="wave" />
-    <ResumePart />
-    <FooterPart />
-<!--    <footer>-->
-<!--      <div class="vertical-line vertical-l1"></div>-->
-<!--      <div class="vertical-line vertical-l2">-->
-<!--        <div id="social" class="white-text">-->
-<!--          <div class="social-wrapper">-->
-<!--            <div class="social-text">github</div>-->
-<!--            <div class="social-line"><div></div></div>-->
-<!--          </div>-->
-<!--          <div class="social-wrapper">-->
-<!--            <div class="social-text">skype</div>-->
-<!--            <div class="social-line"><div></div></div>-->
-<!--          </div>-->
-<!--          <div class="social-wrapper">-->
-<!--            <div class="social-text">linkedin</div>-->
-<!--            <div class="social-line"><div></div></div>-->
-<!--          </div>-->
-<!--          <div class="social-wrapper">-->
-<!--            <div class="social-text">skype</div>-->
-<!--            <div class="social-line"><div></div></div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="vertical-line vertical-l3"></div>-->
-<!--    </footer>-->
+    <HelloPage />
+    <Wave />
+    <ResumePage />
+    <FooterPage />
   </div>
 </template>
 
 <script>
-import Wave from "/src/components/LandingPage/Wave/Wave";
-import HelloPart from "/src/components/LandingPage/Part/HelloPart";
-import ResumePart from "/src/components/LandingPage/Part/ResumePart";
-import FooterPart from "/src/components/LandingPage/Part/FooterPart";
+import Wave from "/src/components/Hello/Wave/Wave";
+import HelloPage from "/src/components/Hello/HelloPage";
+import ResumePage from "/src/components/Resume/ResumePage";
+import FooterPage from "/src/components/Footer/FooterPage";
 import DevTitle from "/src/components/DevTitle";
 
 export default {
   name: "HomeView",
-  components: { Wave, HelloPart, ResumePart, FooterPart, DevTitle }
+  components: { Wave, HelloPage, ResumePage, FooterPage, DevTitle }
 }
 </script>
 
 <style scoped lang="scss">
-
-
-#wave {
-  position: absolute;
-  top: 0;
-}
+@import "src/assets/media-queries";
 
 </style>

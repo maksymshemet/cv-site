@@ -6,7 +6,7 @@
 
 <script>
 
-import Tag from "/src/components/LandingPage/Tag/Tag"
+import Tag from "/src/components/Tag"
 
 export default {
   name: "TagContainer",
@@ -16,6 +16,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "src/assets/media-queries";
 
 #container {
   width: 100%;
@@ -25,6 +26,14 @@ export default {
     margin-top: 15px;
     margin-right: 15px;
     height: fit-content;
+  }
+}
+
+@include before-media-xs(){
+  #container {
+    > * {
+      margin-right: 10px;
+    }
   }
 }
 </style>

@@ -17,14 +17,14 @@
 </template>
 
 <script>
-import TitledRow from "/src/components/LandingPage/Row/TitledRow";
-import DownloadButtonRow from "/src/components/LandingPage/Row/DownloadButtonRow";
-import TagContainer from "/src/components/LandingPage/Tag/TagContainer";
-import Project from "/src/components/LandingPage/Project";
+import TitledRow from "/src/components/Resume/Row/TitledRow";
+import DownloadButtonRow from "/src/components/Resume/Row/DownloadButtonRow";
+import TagContainer from "/src/components/Containers/TagContainer";
+import Project from "/src/components/Resume/Project";
 
 import { projects, skills, about } from "/src/data";
 export default {
-  name: "ResumePart",
+  name: "ResumePage",
   components: {TitledRow, DownloadButtonRow, TagContainer, Project},
   data() {
     return {
@@ -37,6 +37,25 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "src/assets/media-queries";
+
+@include before-media-xs() {
+  #main-container {
+    width: 300px;
+  }
+}
+
+//@include from-media-xs {
+//    #main-container {
+//      width: 330px;
+//    }
+//}
+//@include from-media-xs() {
+//  #main-container {
+//    width: 330px;
+//  }
+//}
+
 #main-container {
   > * {
     margin-top: 100px;
