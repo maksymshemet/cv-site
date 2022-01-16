@@ -37,6 +37,7 @@ export default {
 <style lang="scss" scoped>
 
 @import "src/assets/variables";
+@import "src/assets/media-queries";
 
 #back-to-top {
   cursor: pointer;
@@ -74,6 +75,20 @@ span:hover {
   flex-wrap: wrap;
   justify-content: space-between;
   column-gap: 15px;
+}
+
+@include before-media-sm() {
+  #social-links {
+    font-size: 50pt;
+    justify-content: flex-start;
+    column-gap: 35px;
+  }
+}
+
+@include before-media-xs() {
+  #social-links {
+    font-size: 30pt;
+  }
 }
 
 </style>

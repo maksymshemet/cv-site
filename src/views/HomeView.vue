@@ -2,7 +2,6 @@
   <div>
     <DevTitle style="display: none"/>
     <Hello />
-<!--    <Wave />-->
     <Resume />
     <Footer />
   </div>

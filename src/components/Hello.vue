@@ -5,7 +5,7 @@
 
     <b-container id="main-container" fluid="sm" class="row-padding">
         <div id="text-wrapper">
-          <Glitch id="name" class="no-select" text="maksym shemet">maksym shemet</Glitch>
+          <Glitch id="name" class="no-select" text="maksym shemet">miaksym shemet</Glitch>
           <Glitch id="profession" class="no-select" text="software engineer">software engineer</Glitch>
         </div>
       <section id="section10" class="demo">
@@ -34,6 +34,7 @@ export default {
 <style scoped lang="scss">
 
 @import "src/assets/variables";
+@import "src/assets/media-queries";
 
 $noise-image: url("/noise-transparent.png");
 $name-block-height: 272px;
@@ -104,6 +105,27 @@ $surname-block-height: 308px;
   cursor: default;
   margin: auto;
 }
+
+@include before-media-sm() {
+  #name {
+    font-size: 60pt;
+  }
+
+  #profession {
+    font-size: 18pt;
+  }
+}
+
+@include before-media-xs() {
+  #name {
+    font-size: 40pt;
+  }
+  #profession {
+    font-size: 14pt;
+  }
+}
+
+
 
 @keyframes bg-animation {
   0% { transform: translate(0,0) }

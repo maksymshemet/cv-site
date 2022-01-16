@@ -105,6 +105,11 @@ $date-color: #bebebe;
   #project-tags {
     padding-top: 0px;
   }
+
+  .date {
+    text-align: start;
+    padding-left: 15px;
+  }
 }
 
 .pl-0 {

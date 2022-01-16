@@ -41,28 +41,20 @@ export default {
 @import "src/assets/media-queries";
 @import "src/assets/variables";
 
-@include before-media-sm() {
-  #main-container {
-    width: calc(100% - 60px);
-  }
-}
-
-//@include from-media-xs {
-//    #main-container {
-//      width: 330px;
-//    }
-//}
-//@include from-media-xs() {
-//  #main-container {
-//    width: 330px;
-//  }
-//}
 
 #main-container {
   > * {
     margin-top: 100px;
   }
   position: relative;
+  overflow: hidden
+}
+
+@include before-media-sm() {
+  #main-container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }
 
 #background {
