@@ -1,0 +1,26 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    <url>
+        <loc>http://maksymshemet.com/</loc>
+        <lastmod>2022-01-16T15:00:38+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>http://maksymshemet.com/#about</loc>
+        <lastmod>2022-01-16T15:00:38+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>http://maksymshemet.com/#contact</loc>
+        <lastmod>2022-01-16T15:00:38+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>http://maksymshemet.com/cv.pdf</loc>
+        <lastmod>2022-01-16T15:00:38+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+</urlset>

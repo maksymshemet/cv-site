@@ -1,13 +1,15 @@
 <template>
-  <b-container id="main-container" fluid="sm" class="row-padding">
-    <div id="background"></div>
-    <TitledRow id="about-text" title="About">
+  <div id="wrapper">
+  <div id="background"></div>
+  <b-container id="resume" fluid="sm" class="row-padding">
+
+    <TitledRow id="about" title="About">
       {{about}}
     </TitledRow>
     <TitledRow title="Skills">
       <TagContainer :tags="skills" />
     </TitledRow>
-    <TitledRow title="Experience">
+    <TitledRow id="experience" title="Experience">
       <Project  v-for="(project, i) in projects" :key="i"
                 :project="project"
                 :class="{ 'top-space-project' : i != 0}"
@@ -15,6 +17,7 @@
     </TitledRow>
     <DownloadButton />
   </b-container>
+  </div>
 </template>
 
 <script>
@@ -41,17 +44,27 @@ export default {
 @import "src/assets/media-queries";
 @import "src/assets/variables";
 
+#wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
 
-#main-container {
+#resume {
   > * {
     margin-top: 100px;
   }
   position: relative;
-  overflow: hidden
+  overflow: hidden;
+
+  .horizontal-align {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @include before-media-sm() {
-  #main-container {
+  #resume {
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -61,12 +74,12 @@ export default {
   position: absolute;
   background-color: $background-light-color;
   margin: 0;
-  top: -100px;
-  height: calc(100% + 100px);
-  width: 250vw;
-  left: -100vw;
+  top: 0;
+  height: 100%;
+  width: 100vw;
+  left: 0;
 }
-#about-text {
+#about {
   text-align: start;
   font-weight: 400;
   font-size: 12pt;

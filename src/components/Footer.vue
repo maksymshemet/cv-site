@@ -1,6 +1,6 @@
 <template>
-  <div id="root">
-    <b-container id="main-container" fluid="sm" class="row-padding">
+  <div id="footer">
+    <b-container id="contact" fluid="sm" class="row-padding">
       <div id="back-to-top" class="thin-text no-select" v-on:click="scrollTop">back to top</div>
       <div id="social-links">
         <Glitch class="no-select" text="email" :url="social.email"/>
@@ -47,7 +47,7 @@ export default {
   margin-top: 25px;
   margin-bottom: 10px;
 }
-#root {
+#footer {
   padding-top: 25px;
   color: rgba(245, 245, 245, 0);
   position: relative;
