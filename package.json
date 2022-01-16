@@ -11,6 +11,7 @@
     "bootstrap": "^4.6.0",
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.6.5",
+    "sass": "^1.48.0",
     "vue": "^2.6.12",
     "vue-router": "^3.0.1",
     "vue-static": "^0.0.5"
@@ -25,7 +26,6 @@
     "compass-mixins": "^0.12.10",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
-    "node-sass": "^4.14.1",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.6.11",
     "webpack-shell-plugin": "^0.5.0"
