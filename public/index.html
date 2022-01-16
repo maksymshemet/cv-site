@@ -4,28 +4,64 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <link rel="icon" href="<%= BASE_URL %>maksweb-29.png">
 <!--    <title><%= htmlWebpackPlugin.options.title %></title>-->
-    <title>Max Shemet</title>
-    <link rel="stylesheet" type="text/css" href="spinner.css" />
-<!--      <link rel="preconnect" href="https://fonts.gstatic.com">-->
-      <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Maksym Shemet</title>
+    <link rel="preload" href="loading.css" as="style"  crossorigin/>
+    <link rel="stylesheet" type="text/css" href="loading.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600&family=Montserrat:wght@200;400;600;900&display=swap" rel="stylesheet">
   </head>
   <body>
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app">
-      <div id="wrapper" v-if="!isLoaded">
-        <div class="loader" data-text="Loading">
-          <span class="loader-circle"></span>
-          <span class="loader-circle"></span>
-          <span class="loader-circle"></span>
-          <span class="loader-circle"></span>
+    <div id="body-m2">
+        <div class="loader-m2">
+            <svg viewBox="0 0 80 80" class="loader-svg">
+                <circle cx="40" cy="40" r="32"></circle>
+            </svg>
         </div>
-      </div>
+
+        <div class="loader-m2 triangle">
+            <svg viewBox="0 0 86 80" class="loader-svg">
+                <polygon points="43 8 79 72 7 72"></polygon>
+            </svg>
+        </div>
+
+        <div class="loader-m2">
+            <svg viewBox="0 0 80 80" class="loader-svg">
+                <rect x="8" y="8" width="64" height="64"></rect>
+            </svg>
+        </div>
     </div>
+    </div>
+
     <!-- built files will be auto injected -->
   </body>
+<!--<script>-->
+<!--    const red = document.querySelector('#loading');-->
 
+<!--    function getRandomInt(max) {-->
+<!--        return Math.floor(Math.random() * max);-->
+<!--    }-->
+
+<!--    function getRandomArbitrary(min, max) {-->
+<!--        return Math.random() * (max - min) + min;-->
+<!--    }-->
+
+<!--    function setProperty(duration) {-->
+<!--        red.style.setProperty('&#45;&#45;animation-time', getRandomArbitrary(1, 3) +'s');-->
+<!--        red.style.setProperty('&#45;&#45;animation-deg', getRandomInt(15) +'deg');-->
+<!--    }-->
+
+<!--    function changeAnimationTime() {-->
+<!--        const animationDuration = Math.random();-->
+<!--        setProperty(animationDuration);-->
+<!--    }-->
+
+<!--    // setInterval(changeAnimationTime, 1000);-->
+<!--</script>-->
 </html>

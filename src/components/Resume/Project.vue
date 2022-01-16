@@ -23,10 +23,10 @@
       </b-col>
     </b-row>
     <b-row>
-      <b-col id="project-time" md="9" sm="7" cols="3">
+      <b-col id="project-time" md="8" sm="7" cols="3">
         <div class="date-line"></div>
       </b-col>
-      <b-col md="3" sm="5" cols="9" class="date">{{ project.startDate }} - {{ project.endDate }}</b-col>
+      <b-col md="4" sm="5" cols="9" class="date">{{ project.startDate }} - {{ project.endDate }}</b-col>
     </b-row>
   </b-container>
 </template>
@@ -69,8 +69,15 @@ $date-color: #bebebe;
     font-weight: 900;
     font-size: 16pt;
     > a {
+      width: fit-content;
       color: $text-color-dark;
       text-decoration: none;
+      display: block;
+      transition: transform 250ms;
+      &:hover {
+        //color: red;
+        transform: translateY(-2px);
+      }
     }
   }
   .row:not(.no-top-space) {

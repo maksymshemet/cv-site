@@ -51,6 +51,14 @@ export default {
   }
 }
 
+.social-line {
+  align-self: center;
+  width: 80%;
+  > div {
+    border-bottom: 0px solid rgba(255, 0, 0, 0.27);
+  }
+}
+
 @include before-media-xs(){
   .social-text {
     &:hover > div > a {
@@ -59,12 +67,14 @@ export default {
   }
 }
 
-.social-line {
-  align-self: center;
-  width: 80%;
-  > div {
-    border-bottom: 0px solid rgba(255, 0, 0, 0.27);
+@include before-media-md() {
+  .social-line {
+    position: absolute;
+    right: 0;
+    width: 70%;
   }
 }
+
+
 
 </style>

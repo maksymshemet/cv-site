@@ -41,7 +41,8 @@ export default {
 
       window.addEventListener("resize", () => {
         // alert(`resize: ${this.currentWidth} - ${this.stage.width}, ${this.currentHeight} - ${this.stage.height}`)
-        if (this.currentWidth != this.stage.width) {
+        if (this.currentWidth != this.stage.width)
+        {
           this.stage.onResize();
           this.mesh.onResize();
           this.currentWidth = stage.width

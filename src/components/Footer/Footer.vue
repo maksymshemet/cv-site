@@ -23,7 +23,7 @@ import SocialText from "/src/components/Footer/SocialText"
 
 
 export default {
-  name: "FooterPage",
+  name: "Footer",
   components: {SocialText},
   data() {
     return {
@@ -78,6 +78,36 @@ footer {
   footer {
     .social-line {
       width: 70%;
+    }
+    #social {
+      padding-left: 30px;
+    }
+    #scroll {
+      text-align: right;
+      padding-right: 30px;
+      white-space: nowrap;
+      position: absolute;
+      right: 10px;
+    }
+  }
+}
+
+@include before-media-xs(){
+  footer {
+    .social-line {
+      width: 70%;
+    }
+    #social {
+      position: absolute;
+      left: 30px;
+      padding-left: 0px;
+    }
+    #scroll {
+      text-align: right;
+      padding-right: 0px;
+      white-space: nowrap;
+      right: 30px;
+      position: absolute;
     }
   }
 }

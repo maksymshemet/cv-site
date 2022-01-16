@@ -137,7 +137,6 @@ export class Mesh {
     get height() { return canvasHeight(); }
 
     constructor(stage) {
-        this.canvas = stage.canvas
         this._createUniforms();
 
         this.stage = stage;
@@ -176,19 +175,13 @@ export class Mesh {
         const geometry = new Three.BufferGeometry();
         geometry.setAttribute("position", positions);
 
-        const material = new Three.RawShaderMaterial({
-            vertexShader: vertexShader(),
-            fragmentShader: fragmentShader(),
-            uniforms: this.uniforms,
-            side: Three.DoubleSide
-        });
-
-        this.mesh = new Three.Mesh(geometry, material);
+        this.mesh = new Three.Mesh(geometry, this._createMaterial());
 
         this.stage.scene.add(this.mesh);
     }
 
     _createUniforms() {
+        console.log("uniform updated")
         this.uniforms = {
             // resolution: { type: "v2", value: [ this.canvasWidth, this.canvasHeight ] },
             resolution: { type: "v2", value: [ this.width, this.height ] },
@@ -201,6 +194,15 @@ export class Mesh {
         };
     }
 
+    _createMaterial() {
+        return new Three.RawShaderMaterial({
+            vertexShader: vertexShader(),
+            fragmentShader: fragmentShader(),
+            uniforms: this.uniforms,
+            side: Three.DoubleSide
+        });
+    }
+
     _render() {
         this.uniforms.time.value += 0.01;
     }
@@ -211,5 +213,6 @@ export class Mesh {
 
     onResize() {
         this._createUniforms()
+        this.mesh.material = this._createMaterial();
     }
 }

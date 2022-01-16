@@ -1,5 +1,6 @@
 <template>
   <b-container id="main-container" fluid="sm" class="row-padding">
+    <div id="background"></div>
     <TitledRow id="about-text" title="About">
       {{about}}
     </TitledRow>
@@ -24,7 +25,7 @@ import Project from "/src/components/Resume/Project";
 
 import { projects, skills, about } from "/src/data";
 export default {
-  name: "ResumePage",
+  name: "Resume",
   components: {TitledRow, DownloadButtonRow, TagContainer, Project},
   data() {
     return {
@@ -39,9 +40,9 @@ export default {
 <style scoped lang="scss">
 @import "src/assets/media-queries";
 
-@include before-media-xs() {
+@include before-media-sm() {
   #main-container {
-    width: 300px;
+    width: calc(100% - 60px);
   }
 }
 
@@ -60,6 +61,17 @@ export default {
   > * {
     margin-top: 100px;
   }
+  position: relative;
+}
+
+#background {
+  position: absolute;
+  background-color: whitesmoke;
+  margin: 0;
+  top: -100px;
+  height: calc(100% + 100px);
+  width: 250vw;
+  left: -100vw;
 }
 #about-text {
   text-align: start;

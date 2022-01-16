@@ -33,7 +33,7 @@ import LinesContainer from "/src/components/Containers/LinesContainer"
 import { social } from "/src/data"
 
 export default {
-  name: "HelloPage",
+  name: "Hello",
   components: {LinesContainer},
   methods: {
     scrollBottom() {
@@ -119,13 +119,55 @@ header {
   }
 }
 
+@include before-media-md() {
+  #ln {
+    .greetings {
+      font-size: 5.5vh;
+      padding-left: 15px;
+      br {
+        display: block;
+      }
+    }
+
+    #scroll {
+      padding-right: 30px;
+      white-space: nowrap;
+      text-align: right;
+      right: 30px;
+    }
+  }
+}
+
 @include before-media-sm() {
   #ln {
     .greetings {
       font-size: 5vh;
-      padding-left: 10px;
+      padding-left: 30px;
       br {
         display: block;
+      }
+    }
+    #scroll {
+      margin-bottom: 65px;
+      padding-right: 30px;
+      text-align: right;
+      right: 50px;
+    }
+  }
+}
+
+@include before-media-xs() {
+  #ln {
+    #scroll {
+      padding-right: 30px;
+      white-space: nowrap;
+      text-align: right;
+      right: calc(40px + 30px);
+      margin-bottom: 65px;
+    }
+    .greetings {
+      p {
+        margin-bottom: 50px;
       }
     }
   }

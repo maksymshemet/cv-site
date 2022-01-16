@@ -1,5 +1,5 @@
 <template>
-  <div>developers version</div>
+  <div>dev version</div>
 </template>
 
 <script>

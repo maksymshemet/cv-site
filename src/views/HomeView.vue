@@ -1,23 +1,23 @@
 <template>
   <div>
-    <DevTitle />
-    <HelloPage />
-    <Wave />
-    <ResumePage />
-    <FooterPage />
+    <DevTitle style="display: none"/>
+    <Hello />
+<!--    <Wave />-->
+    <Resume />
+    <Footer />
   </div>
 </template>
 
 <script>
-import Wave from "/src/components/Hello/Wave/Wave";
-import HelloPage from "/src/components/Hello/HelloPage";
-import ResumePage from "/src/components/Resume/ResumePage";
-import FooterPage from "/src/components/Footer/FooterPage";
+// import Wave from "/src/components/Hello/Wave/Wave";
+import Hello from "/src/components/Hello2/Hello";
+import Resume from "/src/components/Resume/Resume";
+import Footer from "/src/components/Footer2/Footer";
 import DevTitle from "/src/components/DevTitle";
 
 export default {
   name: "HomeView",
-  components: { Wave, HelloPage, ResumePage, FooterPage, DevTitle }
+  components: { Hello, Resume, Footer, DevTitle }
 }
 </script>
 

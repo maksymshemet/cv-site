@@ -53,7 +53,7 @@ $container-vert-col1-width: calc((100% - #{$container-width}) / 2);
 }
 
 @include from-media-xs {
-  @include vertical-lines(100%);
+  @include vertical-lines(100%, true);
 }
 
 @include from-media-sm {
