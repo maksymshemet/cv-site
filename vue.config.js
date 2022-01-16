@@ -8,10 +8,17 @@ module.exports = {
                 includePaths: [path.resolve(__dirname, './node_modules/compass-mixins/lib')]
             }
         }
+    },
+    configureWebpack:{
+        optimization: {
+            splitChunks: {
+                chunks: 'all',
+                minSize: 10000,
+                maxSize: 250000,
+            }
+        },
+        plugins: [
+
+        ]
     }
 }
-// module.exports.cssLoaders = function (options) {
-//     return {
-//         sass: generateLoaders('sass', { indentedSyntax: true, includePaths: [path.resolve(__dirname, '../node_modules/compass-mixins/lib')] }),
-//         scss: generateLoaders('sass', { includePaths: [path.resolve(__dirname, '../node_modules/compass-mixins/lib')] }),
-// }

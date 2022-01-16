@@ -5,11 +5,11 @@
 
     <b-container id="main-container" fluid="sm" class="row-padding">
         <div id="text-wrapper">
-          <div id="name" class="glitch" data-text="maksym shemet">maksym shemet</div>
-          <div id="profession" class="glitch" data-text="software engineer">software engineer</div>
+          <Glitch id="name" class="no-select" text="maksym shemet">maksym shemet</Glitch>
+          <Glitch id="profession" class="no-select" text="software engineer">software engineer</Glitch>
         </div>
       <section id="section10" class="demo">
-        <div id="s1">
+        <div id="s1" v-on:click="scrollBottom">
           <span></span>
         </div>
       </section>
@@ -18,14 +18,22 @@
 </template>
 
 <script>
+import Glitch from "/src/components/Glitch/Glitch"
+
 export default {
-  name: "Hello"
+  name: "Hello",
+  components: {Glitch},
+  methods: {
+    scrollBottom() {
+      window.scrollTo(0,document.body.scrollHeight);
+    }
+  }
 }
 </script>
 
 <style scoped lang="scss">
-//@import url('https://fonts.googleapis.com/css2?family=Exo+2&family=Oswald:wght@600&display=swap');
-//@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap');
+
+@import "src/assets/variables";
 
 $noise-image: url("/noise-transparent.png");
 $name-block-height: 272px;
@@ -43,7 +51,7 @@ $surname-block-height: 308px;
   margin: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #141415;
+  background-color: $background-dark-color;
 }
 #noise {
   z-index: 0;
@@ -63,92 +71,35 @@ $surname-block-height: 308px;
   animation: bg-animation .2s infinite;
 }
 
-.glitch {
-  position: relative;
-  color: white;
-  mix-blend-mode: lighten;
-
-  &:before,
-  &:after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    width: 100%;
-    background: black;
-    clip: rect(0, 0, 0, 0);
-  }
-
-  &:before {
-    left: -1px;
-    text-shadow: 1px 0 rgba(red,0.7);
-  }
-
-  &:after {
-    left: 1px;
-    text-shadow: -1px 0 rgba(blue,0.7);
-  }
-
-  &:hover {
-    &:before {
-      text-shadow: 4px 0 rgba(red,0.7);
-      animation: glitch-loop-1 1.8s infinite ease-in-out alternate-reverse;
-    }
-    &:after {
-      text-shadow: -5px 0 rgba(blue,0.7);
-      animation: glitch-loop-2 1.8s infinite ease-in-out alternate-reverse;
-    }
-  }
-}
-
-@keyframes glitch-loop-1 {
-  $steps: 20;
-  @for $i from 0 through $steps {
-    #{percentage($i*(1/$steps))} {
-      clip: rect(random(150)+px, 9999px, random(150)+px, 0px)
-    }
-  }
-}
-
-@keyframes glitch-loop-2 {
-  $steps: 20;
-  @for $i from 0 through $steps {
-    #{percentage($i*(1/$steps))} {
-      clip: rect(random(150)+px, 9999px, random(150)+px, 0px)
-    }
-  }
-}
-
 #root {
-  //position: fixed;
   height: 100vh;
   width: 100%;
 }
 
 #text-wrapper {
-  //background-color: red;
   position: relative;
   width: 100%;
-  //height: calc(#{$name-block-height} + #{$surname-block-height});
-  //transform: translateY(-15px);
 }
 
 #name {
+  display: block;
   font-family: 'Exo 2', sans-serif;
   font-size: 90pt;
   font-weight: 600;
   text-transform: uppercase;
-  color: whitesmoke;
+  color: $text-color;
   width: fit-content;
   cursor: default;
   margin: auto;
 }
 
 #profession {
+  display: block;
   font-family: 'Montserrat', sans-serif;
   font-weight: 200;
   font-size: 25pt;
   text-transform: lowercase;
-  color: whitesmoke;
+  color: $text-color;
   width: fit-content;
   cursor: default;
   margin: auto;
@@ -170,6 +121,7 @@ $surname-block-height: 308px;
 
 #s1 {
   padding-top: 60px;
+  cursor: pointer;
 }
 
 #s1 span {
@@ -179,9 +131,6 @@ $surname-block-height: 308px;
   width: 30px;
   height: 50px;
   margin-left: -15px;
-  //border: 2px solid whitesmoke;
-  //border-radius: 50px;
-  //box-sizing: border-box;
 }
 #s1 span::before {
   position: absolute;
@@ -191,7 +140,7 @@ $surname-block-height: 308px;
   width: 9px;
   height: 9px;
   margin-left: -3px;
-  background-color: whitesmoke;
+  background-color: $text-color;
   border-radius: 100%;
   -webkit-animation: sdb10 2s infinite;
   animation: sdb10 2s infinite;

@@ -16,14 +16,13 @@ export default {
 
 <style scoped lang="scss">
 
-$text-color:whitesmoke;
+@import "src/assets/variables";
 
 #btn-col {
   margin-bottom: 75px;
 }
 
 .download-row {
-  //margin-bottom: 75px;
   [class*="col-"] {
     > div {
       cursor: pointer;
@@ -73,7 +72,6 @@ $text-color:whitesmoke;
 
 .btn-hover.color-10 {
   background-image: linear-gradient(to right, #ed6ea0, #ec8c69, #f7186a , #FBB03B);
-  //box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
 }
 
 </style>

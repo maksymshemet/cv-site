@@ -1,5 +1,4 @@
 @import "variables";
-@import "container-lines";
 @import "media-queries";
 
 html {
@@ -40,13 +39,6 @@ body {
   user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 }
-
-@include before-media-xs(){
-  .disable-on-xs {
-    display: none !important;
-  }
-}
-
 
 @mixin background-line($top: 0, $horizontal: false) {
   z-index: 200;

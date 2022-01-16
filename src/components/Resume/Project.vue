@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import TagContainer from "/src/components/Containers/TagContainer";
+import TagContainer from "/src/components/Resume/Container/TagContainer";
 
 export default {
   name: "Project",
@@ -75,7 +75,6 @@ $date-color: #bebebe;
       display: block;
       transition: transform 250ms;
       &:hover {
-        //color: red;
         transform: translateY(-2px);
       }
     }

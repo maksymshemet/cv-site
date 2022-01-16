@@ -1,0 +1,56 @@
+@import "src/assets/variables";
+
+.glitch {
+  position: relative;
+  color: $text-color;
+  mix-blend-mode: lighten;
+
+  &:before,
+  &:after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: $background-dark-color;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  &:before {
+    left: -1px;
+    text-shadow: 1px 0 rgba(red,0.7);
+  }
+
+  &:after {
+    left: 1px;
+    text-shadow: -1px 0 rgba(blue,0.7);
+  }
+
+  &:hover {
+    &:before {
+      text-shadow: 4px 0 rgba(red,0.7);
+      animation: glitch-loop-1 3.8s infinite ease-in-out alternate-reverse;
+    }
+    &:after {
+      text-shadow: -5px 0 rgba(blue,0.7);
+      animation: glitch-loop-2 3.8s infinite ease-in-out alternate-reverse;
+    }
+  }
+}
+
+@keyframes glitch-loop-1 {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      clip: rect(random(150)+px, 9999px, random(150)+px, 0px)
+    }
+  }
+}
+
+@keyframes glitch-loop-2 {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      clip: rect(random(150)+px, 9999px, random(150)+px, 0px)
+    }
+  }
+}

@@ -6,7 +6,7 @@
 
 <script>
 
-import Tag from "/src/components/Tag"
+import Tag from "/src/components/Resume/Tag"
 
 export default {
   name: "TagContainer",

@@ -9,15 +9,30 @@
 </template>
 
 <script>
-// import Wave from "/src/components/Hello/Wave/Wave";
-import Hello from "/src/components/Hello2/Hello";
+import Vue from 'vue'
+
+import Hello from "/src/components/Hello";
 import Resume from "/src/components/Resume/Resume";
-import Footer from "/src/components/Footer2/Footer";
+import Footer from "/src/components/Footer";
 import DevTitle from "/src/components/DevTitle";
+import { LayoutPlugin  } from 'bootstrap-vue'
 
 export default {
   name: "HomeView",
-  components: { Hello, Resume, Footer, DevTitle }
+  components: { Hello, Resume, Footer, DevTitle },
+  inject: ["loadingScreen"],
+  created() {
+    Vue.use(LayoutPlugin )
+  },
+  mounted() {
+    // alert(window.screen.width);
+    document.onreadystatechange = () => {
+      if (document.readyState == "complete") {
+        console.log(this.loadingScreen.enabled)
+        this.loadingScreen.enabled = false;
+      }
+    }
+  }
 }
 </script>
 

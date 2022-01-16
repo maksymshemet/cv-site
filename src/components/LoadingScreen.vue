@@ -1,13 +1,76 @@
+<template>
+  <div id="loading-animation">
 
-.loader-m2 {
+    <div class="loader">
+      <svg viewBox="0 0 80 80" class="loader-svg">
+        <circle cx="40" cy="40" r="32"></circle>
+      </svg>
+    </div>
+
+    <div class="loader triangle">
+      <svg viewBox="0 0 86 80" class="loader-svg">
+        <polygon points="43 8 79 72 7 72"></polygon>
+      </svg>
+    </div>
+
+    <div class="loader">
+      <svg viewBox="0 0 80 80" class="loader-svg">
+        <rect x="8" y="8" width="64" height="64"></rect>
+      </svg>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "LoadingScreen"
+}
+</script>
+
+<style lang="scss" scoped>
+
+@import "src/assets/variables";
+
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+  &:before, &:after {
+    box-sizing: border-box;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+#loading-animation {
+  background-color:$background-dark-color;
+  position: fixed;
+  top: 0;
+  z-index: 9991;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.loader {
   --path: whitesmoke;
   --dot: #ba0068;
   --duration: 3s;
   width: 44px;
   height: 44px;
   position: relative;
+  display: inline-block;
+  margin: 0 16px;
 }
-.loader-m2:before {
+.loader:before {
   content: "";
   width: 6px;
   height: 6px;
@@ -21,42 +84,42 @@
   -webkit-animation: dotRect var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
   animation: dotRect var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
 }
-.loader-m2 .loader-svg {
+.loader .loader-svg {
   display: block;
   width: 100%;
   height: 100%;
 }
-.loader-m2 .loader-svg rect,
-.loader-m2 .loader-svg polygon,
-.loader-m2 .loader-svg circle {
+.loader .loader-svg rect,
+.loader .loader-svg polygon,
+.loader .loader-svg circle {
   fill: none;
   stroke: var(--path);
   stroke-width: 10px;
   stroke-linejoin: round;
   stroke-linecap: round;
 }
-.loader-m2 .loader-svg polygon {
+.loader .loader-svg polygon {
   stroke-dasharray: 145 76 145 76;
   stroke-dashoffset: 0;
   -webkit-animation: pathTriangle 3s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
   animation: pathTriangle 3s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
 }
-.loader-m2 .loader-svg rect {
+.loader .loader-svg rect {
   stroke-dasharray: 192 64 192 64;
   stroke-dashoffset: 0;
   -webkit-animation: pathRect 3s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
   animation: pathRect 3s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
 }
-.loader-m2 .loader-svg circle {
+.loader .loader-svg circle {
   stroke-dasharray: 150 50 150 50;
   stroke-dashoffset: 75;
   -webkit-animation: pathCircle 3s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
   animation: pathCircle 3s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
 }
-.loader-m2.triangle {
+.loader.triangle {
   width: 48px;
 }
-.loader-m2.triangle:before {
+.loader.triangle:before {
   left: 21px;
   transform: translate(-10px, -18px);
   -webkit-animation: dotTriangle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
@@ -192,34 +255,5 @@
     stroke-dashoffset: 275;
   }
 }
-.loader-m2 {
-  display: inline-block;
-  margin: 0 16px;
-}
 
-html {
-  -webkit-font-smoothing: antialiased;
-}
-
-* {
-  box-sizing: border-box;
-}
-*:before, *:after {
-  box-sizing: border-box;
-}
-body {
-  margin: 0;
-}
-#body-m2 {
-  position: fixed;
-  top: 0;
-  z-index: -1;
-  height: 100vh;
-  width: 100vw;
-  background-color: #141415;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow-y: hidden;
-  overflow-x: hidden;
-}
+</style>

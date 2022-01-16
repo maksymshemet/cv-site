@@ -1,30 +1,47 @@
 <template>
   <div id="app" >
-    <router-view v-if="isLoaded"/>
+    <LoadingScreen v-if="loadingScreen.enabled"></LoadingScreen>
+    <router-view />
   </div>
 </template>
 
 <script>
 
+import LoadingScreen from "@/components/LoadingScreen";
+
 export default {
   name: 'App',
+  components: {LoadingScreen},
   data: () => {
     return {
-      isLoaded: false
-    }
-  },
-  mounted() {
-    // alert(window.screen.width);
-    document.onreadystatechange = () => {
-      if(document.readyState == "complete") {
-        this.isLoaded = true;
+      loadingScreen: {
+        enabled: true
       }
     }
+  },
+  provide() {
+    return {
+      loadingScreen: this.loadingScreen
+    }
   }
+  // data: () => {
+  //   return {
+  //     isLoaded: false
+  //   }
+  // },
+  // mounted() {
+  //   // alert(window.screen.width);
+  //   document.onreadystatechange = () => {
+  //     if(document.readyState == "complete") {
+  //       this.isLoaded = true;
+  //     }
+  //   }
+  // }
 }
 </script>
 
 <style lang="scss">
+//@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@600&family=Montserrat:wght@200;400;600;900&display=swap');
 
 @import "src/assets/variables";
 //@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;900&display=swap');
