@@ -19,18 +19,17 @@ export const social = {
 }
 
 export const about = `
-    A software engineer with ${getExperienceYears()} years of commercial experience in software development. With a solid
-    knowledge of Java SE/EE, C# Core, Unity (game engine), Python experience, SCRUM methodology,
-    and a good understanding of OOP, development principles and flows. I have worked with various
-    projects reaching from web-based platforms, RESTful web services based on microservice architecture to desktop applications and mobile games
+    A software engineer with ${getExperienceYears()} years of commercial experience in software development. 
+    Proficient in Java SE/EE, C# Core, Unity (game engine), and Python. Good understanding of OOP 
+    and development principles. Experienced in Agile Methodologies and Waterfall. 
+    Worked with various projects reaching from web-based platforms and RESTful web services 
+    based on microservice architecture to desktop applications and mobile games.
 `
 
 export const skills = [
-    "Java", "Spring Framework", "Hibernate", "JDBC",
-    "Maven", "Gradle", "Apache Solr",
-    "Python", "Airflow", "FastAPI", "C# Core", "Docker", "Terraform", "Kubernetes",
-    "Jenkins", "Google Cloud", "Kafka", "Git", "TDD", "MySQL", "Oracle DB",
-    "HTML5", "CSS3", "JavaScript"
+    "Java", "Spring Framework", "Hibernate", "JDBC", "Maven", "Gradle", "Python", "Airflow",
+    "FastAPI", "C# Core", "Docker", "Kafka", "MySQL", "HTML5", "CSS3", "JavaScript","Kubernetes",
+    "Terraform", "Jenkins", "CircleCi", "Git", "Google Cloud", "TDD", "Agile", "Jira"
 ]
 
 export const projects = [
@@ -38,23 +37,37 @@ export const projects = [
         company: nix,
         position: "Senior Software Engineer",
         description: `
-            An artificial Intelligence business provides advanced crop analytics to its customers by using proprietary Machine Learning
-            algorithms applied to remote sensing captured imagery. It allows
+            Industry's market leader that sells its products to avid motorcyclists in over 85 countries. It's, 
+            also develops Bluetooth and DMC solutions for a select group of leading manufacturers in the field 
+            of motorcycle accessories, such as SHOEI, HJC, and Ducati.
+        `,
+        tags: ["Python 3", "AWS Lambda", "MongoDB" ],
+        actions: ["Implemented application backend functionality"],
+        startDate: "Aug 2022",
+        endDate: "till now"
+    },
+    {
+        company: nix,
+        position: "Senior Software Engineer",
+        description: `
+            An artificial Intelligence business provides advanced crop analytics to its customers by using 
+            proprietary Machine Learning algorithms applied to remote sensing captured imagery. It allows
             customers: to increase their yields, optimize chemical inputs, farm
             more sustainably and make earlier, more informed decisions.
         `,
-        tags: ["Python", "Airflow", "Bottle", "FastAPI", "Kubernetes", "Terraform", "GraphQL", "Google Storage",
-            "GKE", "GCE", "Cloud Run", "Packer", "Jenkins", "Github Actions", "Git" ],
+        tags: ["Python 3", "Airflow", "FastAPI", "Kubernetes", "Terraform", "Google Storage",
+            "GKE", "GCE", "Cloud Run", "Packer", "Jenkins", "CircleCI", "Github Actions", "Git", "PIX4Dmapper",
+            "OpenDroneMap" ],
         actions: [
-            "Implement new features",
-            "Implement terraform scripts",
-            "Deploy from dev to prod environment",
-            "Describe technical implementations",
-            "Implement airflow pipelines",
-            "Support and update legacy code",
-            "Integrate with 3rd party systems"],
+            "Implemented airflow workflows",
+            "Created orthomosaic images from raw datasets",
+            "Integrated with 3rd party systems",
+            "Developed terraform modules",
+            "Deployed from dev to prod environment",
+            "Described technical implementations",
+            "Supported legacy code"],
         startDate: "Sep 2019",
-        endDate: "till now"
+        endDate: "Jul 2022"
     },
     {
         company: epam,
@@ -66,7 +79,7 @@ export const projects = [
             project has micro-service architecture and the goal is to evaluate
             the quality of products at all stages of development.
         `,
-        tags: ["Java 8", "Spring Boot", "Spring Data", "Spring Cloud", "LiquidBase", "Maven", "Kafka", "Apache Solr",
+        tags: ["Java 8", "Spring Boot", "Spring Data", "Spring Cloud", "Liquidbase", "Maven", "Kafka", "Apache Solr",
             "Oracle DB", "Docker", "Kubernetes", "Checkstyle", "Sonar", "Instana", "Kibana", "Git" ],
         actions: [
             "Implemented RESTful services",
@@ -88,7 +101,8 @@ export const projects = [
             architecture and the goal is to decrease production costs by
             letting designers see the predicted prices for the product
         `,
-        tags: ["Java 8", "Spring Boot", "Spring Security", "Spring Data", "Spring Cloud", "LiquidBase", "Maven", "Zookeeper", "Elastic Search", "Oracle DB", "Docker", "Git" ],
+        tags: ["Java 8", "Spring Boot", "Spring Security", "Spring Data", "Spring Cloud", "Liquidbase", "Maven",
+            "Zookeeper", "Elastic Search", "Oracle DB", "Docker", "Git" ],
         actions: [
             "Implemented RESTful services",
             "Improved performance",
